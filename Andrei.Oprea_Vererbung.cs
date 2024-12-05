@@ -32,7 +32,7 @@ namespace UMLFahrzeug
         {
             public int tuere { get; set; }
 
-            public PKW(int id, string kennzeichen, float hzg, bool motoran) : base(id, kennzeichen, hzg, motoran)
+            public PKW(int id, string kennzeichen, float hzg, bool motoran) : base(id, kennzeichen, hzg, motoran) // hier wird es definiert, was ein Objekt von der Klasse erbt
             {
                 tuere = this.tuere;
             }
