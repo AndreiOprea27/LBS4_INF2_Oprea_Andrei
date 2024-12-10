@@ -1,4 +1,4 @@
-﻿namespace Andrei.Oprea_7._2
+namespace Andrei.Oprea_7._2
 {
     internal class Program
     {
@@ -23,12 +23,24 @@
             CTier t;
             t = e;
             Console.WriteLine(t.Steckbrief());
+            Console.WriteLine(t.Landtier());
+            Console.WriteLine(t.Kamera());
+            Console.WriteLine();
             t = n;
             Console.WriteLine(t.Steckbrief());
+            Console.WriteLine(t.Landtier());
+            Console.WriteLine(t.Kamera());
+            Console.WriteLine();
             t = d;
             Console.WriteLine(t.Steckbrief());
+            Console.WriteLine(t.Wassertier());
+            Console.WriteLine(t.Kamera());
+            Console.WriteLine();
             t = w;
             Console.WriteLine(t.Steckbrief());
+            Console.WriteLine(t.Wassertier());
+            Console.WriteLine(t.Kamera());
+            Console.WriteLine();
         }
     }
 
@@ -66,31 +78,63 @@
         }
         public string Steckbrief()
         {
-            string benennung, gsw, tz;
+            string benennung;
             
-            benennung = $"Name des Tieres: {Name}\n";
+            benennung = $"Name des Tieres: {Name}";
+            return benennung;
+        }
+
+        public string Landtier()
+        {
+            string gsw;
             if (Geschwindigkeit == 0) gsw = null;
-            else gsw = $"Geschwindigkeit: {Geschwindigkeit}\n";
+            else gsw = $"Geschwindigkeit: {Geschwindigkeit}";
+            return gsw;
+        }
+        public string Wassertier()
+        {
+            string tz;
             if (Tauchzeit == 0) tz = null;
-            else tz = $"Tauchzeit: {Tauchzeit}\n";
-            return benennung + gsw + tz;
+            else tz = $"Tauchzeit: {Tauchzeit}";
+            return tz;
+        }
+        virtual public string Kamera()
+        {
+            return "*schaut in die Kamera*";
         }
     }
     class CElefant : CTier 
     {
         public CElefant(string name, int geschwindigkeit) : base(name, geschwindigkeit) { }
+        public override string Kamera()
+        {
+            return "*badet sich im Sicht der Kamera*";
+        }
     }
     class CNashorn : CTier
     {
         public CNashorn(string name, int geschwindigkeit) : base(name, geschwindigkeit) { }
+        public override string Kamera()
+        {
+            return "*läuft zur Kamera*";
+        }
+
     }
     class CDelfin : CTier
     {
         public CDelfin(string name, int tauchzeit) : base(name, tauchzeit) { }
+        public override string Kamera()
+        {
+            return "*spielt mit die Kamera*";
+        }
     }
     class CWal : CTier
     {
         public CWal(string name, int tauchzeit) : base(name, tauchzeit) { }
+        public override string Kamera()
+        {
+            return "*ignoriert die Kamera*";
+        }
     }
 
 }
