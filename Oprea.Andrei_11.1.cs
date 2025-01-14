@@ -1,4 +1,4 @@
-﻿using System.ComponentModel;
+using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Reflection.Metadata.Ecma335;
 
@@ -11,14 +11,17 @@ namespace Oprea.Rares_11._1
             int a, b;
             try
             {
-                Console.WriteLine("Enter the 1st number");
-                a = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Enter the 2nd number");
-                b = Convert.ToInt32(Console.ReadLine());
-                Add(a, b);
-                Remove(a, b);
-                Multiply(a, b);
-                Divide(a, b);
+                checked
+                {
+                    Console.WriteLine("Enter the 1st number");
+                    a = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Enter the 2nd number");
+                    b = Convert.ToInt32(Console.ReadLine());
+                    Add(a, b);
+                    Remove(a, b);
+                    Multiply(a, b);
+                    Divide(a, b);
+                }
             }
             catch(NotFiniteNumberException nr)
             {
@@ -34,8 +37,11 @@ namespace Oprea.Rares_11._1
             int sum = 0;
             try
             {
-                sum = a + b;
-                Console.WriteLine($"The sum of the numbers is {sum}");
+                unchecked
+                {
+                    sum = a + b;
+                    Console.WriteLine($"The sum of the numbers is {sum}");
+                }
             }
             catch(Exception ex)
             {
@@ -48,8 +54,11 @@ namespace Oprea.Rares_11._1
             int diff = 0;
             try
             {
-                diff = a - b;
-                Console.WriteLine($"The difference of the numbers is {diff}");
+                unchecked
+                {
+                    diff = a - b;
+                    Console.WriteLine($"The difference of the numbers is {diff}");
+                }
             }
             catch (Exception ex)
             {
@@ -62,8 +71,11 @@ namespace Oprea.Rares_11._1
             int prod = 0;
             try
             {
-            prod = a * b;
-            Console.WriteLine($"The product of the numbers is {prod}");
+                unchecked
+                {
+                    prod = a * b;
+                    Console.WriteLine($"The product of the numbers is {prod}");
+                }
             }
             catch (Exception ex)
             {
@@ -76,8 +88,11 @@ namespace Oprea.Rares_11._1
             float div = 0;
             try
             {
-            div = a / b;
-            Console.WriteLine($"The division of the numbers is {div}");
+                unchecked
+                {
+                    div = a / b;
+                    Console.WriteLine($"The division of the numbers is {div}");
+                }
             }
             catch(DivideByZeroException zero)
             {
