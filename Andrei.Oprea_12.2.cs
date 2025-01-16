@@ -7,7 +7,7 @@ namespace Andrei.Oprea_12._2
             Console.WriteLine("Welche Datei einlesen?");
             string datei = Console.ReadLine();
 
-            Console.WriteLine("Geben Sie die gewünschte Schriftart ein (z. B. Arial):");
+            Console.WriteLine("Geben Sie die gewÃ¼nschte Schriftart ein (z. B. Arial):");
             string fontName = Console.ReadLine();
 
             try
@@ -27,7 +27,7 @@ namespace Andrei.Oprea_12._2
             }
             catch (ArgumentException ex)
             {
-                Console.WriteLine($"Ungültiger Eingang: {ex.Message}");
+                Console.WriteLine($"UngÃ¼ltiger Eingang: {ex.Message}");
             }
             catch (FileNotFoundException ex)
             {
